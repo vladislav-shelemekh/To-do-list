@@ -1,29 +1,26 @@
 .app-list-item {
   font-size: 1.25rem;
+}
 
-  button {
-    width: 35px;
-    height: 35px;
-    margin: 3px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-
-    &:focus {
-      box-shadow: none;
-      outline: none;
-    }
-  }
-
-  .btn-star {
+.app-list-item button {
+  width: 35px;
+  height: 35px;
+  margin: 3px;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+.app-list-item button:focus {
+    box-shadow: none;
+    outline: none;
+}
+.app-list-item .btn-star {
     color: #aeaeae;
-  }
-
-  .btn-trash {
+}
+.app-list-item .btn-trash {
     color: red;
-  }
-
-  .fa-heart {
+}
+.app-list-item .fa-heart {
     width: 35px;
     height: 35px;
     text-align: center;
@@ -33,7 +30,6 @@
     transition: 0.3s all;
     transform: translateX(30px);
     opacity: 0;
-  }
 }
 
 .app-list-item-label {

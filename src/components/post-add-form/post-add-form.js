@@ -1,30 +1,56 @@
-import React from "react";
+import React, {Component} from "react";
 import "./post-add-form.css"
 
-const PostAddForm = ({ createNotice }) => {
-    const onSubmit = (e) => {
-        e.preventDefault()
-        if (!e.target[0].value.length) return
-        createNotice(e.target[0].value)
-        e.target[0].value = ''
+export default class PostAddForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            text: ''
+        }
+        this.onValueChange = this.onValueChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
-    return (
-        <form onSubmit={onSubmit} className="bottom-panel d-flex">
-            <input 
-                type="text"
-                placeholder="Add your notice"
-                className="form-control new-post-label"
-            />
-            <button 
-            type="submit"
-            className="btn btn-outline-secondary">
-                ADD
-            </button>
+    onValueChange(e) {
+        this.setState({ 
+            text: e.target.value
+        })
 
-        </form>
+    }
 
-    )
-};
+    onSubmit(e) {
+        e.preventDefault();
+        this.props.onAdd(this.state.text)
 
-export default PostAddForm;
+        this.setState({
+            text: ''
+        })
+    }
+
+    render() {
+        return (
+            <form 
+            className="bottom-panel d-flex"
+            onSubmit={this.onSubmit}
+            >
+                <input 
+                    type="text"
+                    placeholder="О чем ты думаешь сейчас?"
+                    className="form-control new-post-label"
+                    onChange={this.onValueChange}
+                    value={this.state.text}
+                />
+                <button 
+                type="submit"
+                className="btn btn-outline-secondary"
+                
+                >
+                    Добавить
+                </button>
+    
+            </form>
+    
+        )
+    }
+}
+    
