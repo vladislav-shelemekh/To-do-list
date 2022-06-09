@@ -95,6 +95,8 @@ class App extends React.Component {
             id: String(1)
         }
 
+        console.log(newNotice);
+
         this.setState(({ posts }) => ({ posts: [ ...newState] }))
     }
     render() {
