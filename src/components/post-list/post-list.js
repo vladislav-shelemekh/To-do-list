@@ -29,28 +29,4 @@ const PostList = ({posts, onDelete, onToggleImportant, onToggleLiked}) => { //
     )
 };
 
-
-// class PostList extends React.Component {
-//     render() {
-//         const {posts, onLike, onImportant, onDelete } = this.props
-
-//         return (
-//             <ListGroup className="app-list">
-//                 {posts.map(item => {
-//                     return (
-//                         <li key={item.id} className="list-group-item">
-//                             <PostListItem
-//                                 {...item} 
-//                                 onLike={onLike} 
-//                                 onImportant={onImportant} 
-//                                 onDelete={onDelete}
-//                             />
-//                         </li>
-//                     )
-//                 })}
-//             </ListGroup>
-//         )
-//     }
-// }
-
 export default PostList;

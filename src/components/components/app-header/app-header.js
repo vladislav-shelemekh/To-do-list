@@ -21,8 +21,9 @@ const Header = styled.div`
 
 const AppHeader = ({allPosts, liked}) => {
     return ( 
-        <Header colored>
-            <h1>Оставь свою заметку</h1>
+        <Header colored>  {/* if we need to change a type of component we use as='a' link*/}      
+            <h1>Владислав Залупко</h1>
+            <h2>Из {allPosts} записей понравилось {liked}</h2>
         </Header>
     )
 };
